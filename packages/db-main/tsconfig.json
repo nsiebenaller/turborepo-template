@@ -1,0 +1,10 @@
+{
+  "extends": "tsconfig/base.json",
+  "display": "db-main",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
+  "exclude": ["dist"]
+}

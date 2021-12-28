@@ -1,0 +1,10 @@
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "yarn build && yarn start",
+  "env": {
+    "NODE_DEBUG": 9229,
+    "NODE_ENV": "development"
+  }
+}

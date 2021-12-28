@@ -1,0 +1,17 @@
+{
+  "name": "db-main",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "prisma generate && tsc"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.6.0"
+  },
+  "devDependencies": {
+    "prisma": "^3.6.0",
+    "typescript": "^4.4.4"
+  }
+}

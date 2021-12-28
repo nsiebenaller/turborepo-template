@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  # PostgreSQL database
+  db:
+    container_name: db
+    build: ./db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db/.postgres:/var/lib/postgresql/data
+
+  # Fastify API
+  api:
+    container_name: api
+    build:
+      context: ./
+      dockerfile: ./apps/api/Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - /node_modules
+      - /packages/db-main/node_modules
+      - /apps/api/node_modules
+
+# Persist database between container versions
+volumes:
+  .postgres:
+
+# Enable communication between containers
+networks:
+  default:
+    driver: bridge

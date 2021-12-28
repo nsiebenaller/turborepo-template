@@ -1,0 +1,9 @@
+-- CreateTable
+CREATE TABLE "user" (
+    "id" SERIAL NOT NULL,
+    "name" TEXT,
+    "createdAt" TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "user_pkey" PRIMARY KEY ("id")
+);
